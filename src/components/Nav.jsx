@@ -1,12 +1,20 @@
 import {AppBar, Tab, Box, Toolbar} from "@mui/material";
 import {NavLink} from "react-router-dom";
-import PropTypes from "prop-types";
 import {makeStyles} from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
+  brandLink: {
+    color: theme.palette.text.primary,
+    textTransform: "capitalize",
+    margin: "0px 18px",
+    padding: "18px 12px",
+    opacity: "1",
+    minWidth: "auto",
+  },
   navLink: {
     color: theme.palette.text.disabled,
-    margin: "0px 24px",
+    textTransform: "capitalize",
+    margin: "0px 18px",
     padding: "18px 12px",
     opacity: "1",
     minWidth: "auto",
@@ -19,38 +27,41 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const Nav = ({tabs}) => {
+export const Nav = () => {
   const classes = useStyles();
+  const tabs = ["about", "give", "progress"];
+
   return (
     <AppBar position="static">
       <Box bgcolor="background.paper">
-        {/* <Box> */}
-        <Toolbar>
-          <div>
-            {tabs.map(({path, label}) => (
-              <Tab
-                component={NavLink}
-                className={classes.navLink}
-                to={path}
-                // exact={path === "/"}
-                key={path}
-                label={label}
-                disableRipple
-              />
-            ))}
-          </div>
+        <Toolbar
+          sx={{
+            display: "flex",
+            justifyContent: "flex-end",
+            width: "100%",
+            flexGrow: 10,
+          }}
+        >
+          <Tab
+            component={NavLink}
+            className={classes.brandLink}
+            to="/"
+            label="GiveApp"
+            disableRipple
+          />
+          <Box sx={{display: "flex", flexGrow: 1}} />
+          {tabs.map((tab) => (
+            <Tab
+              component={NavLink}
+              className={classes.navLink}
+              to={tab}
+              key={tab}
+              label={tab}
+              disableRipple
+            />
+          ))}
         </Toolbar>
       </Box>
     </AppBar>
   );
-};
-
-Nav.propTypes = {
-  tabs: PropTypes.arrayOf(
-    PropTypes.shape({
-      path: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-        .isRequired,
-      label: PropTypes.string.isRequired,
-    })
-  ).isRequired,
 };

@@ -1,29 +1,29 @@
 import React from 'react';
 import { Box, createTheme, ThemeProvider } from '@mui/material';
 import { Routes, Route } from 'react-router-dom';
-import { HomePage, AboutPage, GivePage, SharePage } from 'features';
+import { HomePage, AboutPage, GivePage, SharePage, ProgressPage } from 'features';
 import { Nav } from 'components';
 
 const ROUTES = [
   {
-    label: 'Home',
     path: '/',
     element: <HomePage />,
   },
   {
-    label: 'About',
     path: 'about',
     element: <AboutPage />,
   },
   {
-    label: 'Give',
     path: 'give',
     element: <GivePage />,
   },
   {
-    label: 'Share',
     path: 'connect',
     element: <SharePage />,
+  },
+  {
+    path: 'progress',
+    element: <ProgressPage />,
   },
 ];
 
