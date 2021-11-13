@@ -1,14 +1,5 @@
 import {useState} from "react";
-import {
-  AppBar,
-  Box,
-  Grid,
-  Link,
-  IconButton,
-  Menu,
-  MenuItem,
-  Typography,
-} from "@mui/material";
+import {AppBar, Grid, Link, IconButton, Menu, MenuItem} from "@mui/material";
 import {makeStyles} from "@mui/styles";
 import MenuIcon from "@mui/icons-material/Menu";
 
@@ -86,36 +77,5 @@ export const Nav = () => {
         </Grid>
       </Grid>
     </AppBar>
-    // <AppBar position="static">
-    //   <Box bgcolor="background.paper">
-    //     <Toolbar
-    //       sx={{
-    //         display: "flex",
-    //         justifyContent: "flex-end",
-    //         width: "100%",
-    //         flexGrow: 10,
-    //       }}
-    //     >
-    //       <Tab
-    //         component={NavLink}
-    //         className={classes.brandLink}
-    //         to="/"
-    //         label="GiveApp"
-    //         disableRipple
-    //       />
-    //       <Box sx={{display: "flex", flexGrow: 1}} />
-    //       {tabs.map((tab) => (
-    //         <Tab
-    //           component={NavLink}
-    //           className={classes.navLink}
-    //           to={tab}
-    //           key={tab}
-    //           label={tab}
-    //           disableRipple
-    //         />
-    //       ))}
-    //     </Toolbar>
-    //   </Box>
-    // </AppBar>
   );
 };

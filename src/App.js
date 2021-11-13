@@ -3,6 +3,7 @@ import { Box, createTheme, ThemeProvider } from '@mui/material';
 import { Routes, Route } from 'react-router-dom';
 import { HomePage, AboutPage, GivePage, SharePage, ProgressPage } from 'features';
 import { Nav } from 'components';
+import 'styles.css'
 
 const ROUTES = [
   {
@@ -33,10 +34,10 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Box minHeight="100vh" bgcolor="background.default">
+      <Box minHeight="90vh" bgcolor="background.default">
         <Nav tabs={ROUTES} />
         <Box display="flex" justifyContent="center" width="100%" sx={{ mt: 8 }}>
-          <Box width="100%" maxWidth="1400px" style={{ padding: '20px 28px' }}>
+          <Box width="100%" maxWidth="1400px" style={{ padding: '20px' }}>
             <Routes>
               {ROUTES.map((route) => (
                 <Route
