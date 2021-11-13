@@ -1,6 +1,21 @@
-import {Typography, Box, TextField} from "@mui/material";
+import {Typography, Box} from "@mui/material";
+import {makeStyles} from "@mui/styles";
+
+const useStyles = makeStyles((theme) => ({
+  dollar: {
+    // borderWidth: "1px",
+    // borderRadius: "3px",
+  },
+}));
+
+if (navigator.share) {
+  console.log("good");
+} else {
+  console.log("bad");
+}
 
 export const GivePage = () => {
+  const classes = useStyles();
   return (
     <Box sx={{maxWidth: "375px"}}>
       <Typography variant="h4">Give</Typography>
@@ -11,16 +26,33 @@ export const GivePage = () => {
       <Box
         component="form"
         sx={{
-          "& > :not(style)": {my: 1, width: "25ch"},
+          "& > input": {my: 1, width: "25ch", p: 1},
           display: "flex",
           flexDirection: "column",
         }}
         noValidate
         autoComplete="off"
       >
-        <TextField label="Name" variant="outlined" />
-        <TextField label="Phone Number" variant="outlined" />
-        <TextField label="Amount to Give" variant="outlined" />
+        <Typography>Enter your name</Typography>
+        <input type="text" id="name" name="name" placeholder="name" />
+        <Typography>Enter your phone pumber</Typography>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="(000) 000-0000"
+        />
+        <Typography>Amount to give</Typography>
+        <input placeholder="$" disabled={true} className={classes.dollar} />
+        <input
+          type="number"
+          id="amount"
+          name="amount"
+          placeholder="$1.00"
+          min="0.00"
+          max="10000.00"
+          step="0.01"
+        />
       </Box>
     </Box>
   );
