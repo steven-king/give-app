@@ -67,7 +67,7 @@ export const Nav = () => {
               </Link>
             </MenuItem>
             {tabs.map((tab, i) => (
-              <MenuItem onClick={handleClose}>
+              <MenuItem key={i} onClick={handleClose}>
                 <Link key={i} href={`/${tab}`} className={classes.link}>
                   {tab}
                 </Link>

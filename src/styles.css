@@ -38,3 +38,9 @@ input {
   border-radius: 7px 0 0 7px;
   background: white;
 }
+
+img {
+  width: 66px;
+  border-radius: 12%;
+  margin-top: 10px;
+}

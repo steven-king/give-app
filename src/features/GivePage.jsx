@@ -1,5 +1,5 @@
-import {useState, useEffect} from "react";
-import {Typography, Box} from "@mui/material";
+import {useState} from "react";
+import {Typography, Box, Link} from "@mui/material";
 
 // if (navigator.share) {
 //   console.log("good");
@@ -40,7 +40,9 @@ export const GivePage = () => {
 
   const formatAmount = (value) => {
     if (!value) return value;
+    // remove leading zeros
     value = value.replace(/\D|^0+/g, "");
+    // remove nondigit values
     const amt = value.replace(/[^\d]/g, "");
     const amtLength = amt.length;
     if (amtLength === 1) return `0.0${amt}`;
@@ -91,6 +93,16 @@ export const GivePage = () => {
           />
         </div>
       </Box>
+      <Link href="#">
+        <img src="images/paypal-logo.png" alt="PayPal logo" />
+      </Link>
+      <Link href="#">
+        <img
+          src="images/venmo-logo.png"
+          alt="Venmo logo"
+          style={{margin: "0 10px"}}
+        />
+      </Link>
     </Box>
   );
 };
