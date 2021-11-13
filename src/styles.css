@@ -1,6 +1,11 @@
+html {
+  font-size: 18px;
+}
+
 /* Give Page */
 
 input {
+  font-size: 18px;
   border: 2px solid #ccc;
   width: 100%;
   color: #666;
@@ -18,7 +23,6 @@ input {
   display: flex;
   justify-content: flex-start;
   margin-bottom: 8px;
-  width: 180px;
 }
 .amountContainer input {
   max-width: 300px;
@@ -42,5 +46,4 @@ input {
 img {
   width: 66px;
   border-radius: 12%;
-  margin-top: 10px;
 }

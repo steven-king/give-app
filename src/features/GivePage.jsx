@@ -1,13 +1,7 @@
 import {useState} from "react";
-import {Typography, Box, Link} from "@mui/material";
+import {Typography, Box, Link, Button} from "@mui/material";
 
-// if (navigator.share) {
-//   console.log("good");
-// } else {
-//   console.log("bad");
-// }
-
-export const GivePage = () => {
+export const GivePage = ({cause, setName}) => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [amount, setAmount] = useState("");
 
@@ -52,57 +46,82 @@ export const GivePage = () => {
 
   return (
     <Box sx={{maxWidth: "375px"}}>
-      <Typography variant="h4">Give</Typography>
-      <Typography sx={{my: 1}}>
+      <Typography
+        variant="h4"
+        align="center"
+      >{`Donate to ${cause}`}</Typography>
+      <Typography sx={{my: 1}} align="center">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
       </Typography>
-      <Box
-        component="form"
-        sx={{
-          "& > input": {mb: 1, width: "180px", p: 1},
-          display: "flex",
-          flexDirection: "column",
-        }}
-        noValidate
-        autoComplete="off"
-      >
-        <Typography>Enter your name</Typography>
-        <input type="text" id="name" name="name" placeholder="name" />
-        <Typography>Enter your phone pumber</Typography>
-        <input
-          type="tel"
-          id="phone"
-          name="phone"
-          placeholder="(000) 000-0000"
-          onChange={(e) => handleInputPhone(e)}
-          value={phoneNumber}
-        />
-        <Typography>Amount to give</Typography>
-        <div className="amountContainer">
-          <span className="dollar">
-            <Typography>$</Typography>
-          </span>
+      <Box sx={{display: "flex", justifyContent: "center"}}>
+        <Box
+          component="form"
+          sx={{
+            "& > input": {mb: 1, p: 1},
+            display: "flex",
+            flexDirection: "column",
+          }}
+          noValidate
+          autoComplete="off"
+        >
+          <Typography>Enter your name</Typography>
           <input
-            id="amount"
-            name="amount"
             type="text"
-            placeholder="1.00"
-            onChange={(e) => handleInputAmount(e)}
-            value={amount}
+            id="name"
+            name="name"
+            placeholder="name"
+            onChange={(e) => setName(e.target.value)}
           />
-        </div>
+          <Typography>Enter your phone number</Typography>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="(000) 000-0000"
+            onChange={(e) => handleInputPhone(e)}
+            value={phoneNumber}
+          />
+          <Typography>Amount to give</Typography>
+          <div className="amountContainer">
+            <span className="dollar">
+              <Typography>$</Typography>
+            </span>
+            <input
+              id="amount"
+              name="amount"
+              type="text"
+              placeholder="1.00"
+              onChange={(e) => handleInputAmount(e)}
+              value={amount}
+            />
+          </div>
+        </Box>
       </Box>
-      <Link href="#">
-        <img src="images/paypal-logo.png" alt="PayPal logo" />
-      </Link>
-      <Link href="#">
-        <img
-          src="images/venmo-logo.png"
-          alt="Venmo logo"
-          style={{margin: "0 10px"}}
-        />
-      </Link>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          my: 2,
+        }}
+      >
+        <Link href="#">
+          <img src="images/paypal-logo.png" alt="PayPal logo" />
+        </Link>
+        <Link href="#">
+          <img
+            src="images/venmo-logo.png"
+            alt="Venmo logo"
+            style={{marginLeft: "10px"}}
+          />
+        </Link>
+      </Box>
+      <Box sx={{display: "flex", justifyContent: "center"}}>
+        <Button variant="contained" href="/connect">
+          Donate Now
+        </Button>
+      </Box>
     </Box>
   );
 };

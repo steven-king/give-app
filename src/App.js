@@ -1,37 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, createTheme, ThemeProvider } from '@mui/material';
 import { Routes, Route } from 'react-router-dom';
 import { HomePage, AboutPage, GivePage, SharePage, ProgressPage } from 'features';
 import { Nav } from 'components';
-import 'styles.css'
-
-const ROUTES = [
-  {
-    path: '/',
-    element: <HomePage />,
-  },
-  {
-    path: 'about',
-    element: <AboutPage />,
-  },
-  {
-    path: 'give',
-    element: <GivePage />,
-  },
-  {
-    path: 'connect',
-    element: <SharePage />,
-  },
-  {
-    path: 'progress',
-    element: <ProgressPage />,
-  },
-];
+import 'styles.css';
 
 const theme = createTheme({
 });
 
 function App() {
+  const [name, setName] = useState("");
+  const [cause, setCause] = useState("X Cause");
+
+  const ROUTES = [
+    {
+      path: '/',
+      element: <HomePage />,
+    },
+    {
+      path: 'about',
+      element: <AboutPage />,
+    },
+    {
+      path: 'give',
+      element: <GivePage cause={cause} setName={setName} />,
+    },
+    {
+      path: 'connect',
+      element: <SharePage cause={cause} name={name} />,
+    },
+    {
+      path: 'progress',
+      element: <ProgressPage />,
+    },
+  ];
+
   return (
     <ThemeProvider theme={theme}>
       <Box minHeight="90vh" bgcolor="background.default">

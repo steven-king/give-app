@@ -32,9 +32,8 @@ export const Nav = () => {
         <Grid item>
           <Link
             href={`/`}
-            variant="h5"
             color="textPrimary"
-            sx={{textDecoration: "none"}}
+            sx={{textDecoration: "none", fontWeight: 500}}
           >
             GiveApp
           </Link>
