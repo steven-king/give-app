@@ -1,12 +1,5 @@
 import {Typography, Box} from "@mui/material";
-import {makeStyles} from "@mui/styles";
-
-const useStyles = makeStyles((theme) => ({
-  dollar: {
-    // borderWidth: "1px",
-    // borderRadius: "3px",
-  },
-}));
+import "css/givePage.css";
 
 if (navigator.share) {
   console.log("good");
@@ -15,7 +8,6 @@ if (navigator.share) {
 }
 
 export const GivePage = () => {
-  const classes = useStyles();
   return (
     <Box sx={{maxWidth: "375px"}}>
       <Typography variant="h4">Give</Typography>
@@ -43,16 +35,18 @@ export const GivePage = () => {
           placeholder="(000) 000-0000"
         />
         <Typography>Amount to give</Typography>
-        <input placeholder="$" disabled={true} className={classes.dollar} />
-        <input
-          type="number"
-          id="amount"
-          name="amount"
-          placeholder="$1.00"
-          min="0.00"
-          max="10000.00"
-          step="0.01"
-        />
+        <div class="amountContainer">
+          <span class="dollar">
+            <Typography>$</Typography>
+          </span>
+          <input
+            id="amount"
+            name="amount"
+            type="text"
+            maxlength="10"
+            placeholder="1.00"
+          />
+        </div>
       </Box>
     </Box>
   );

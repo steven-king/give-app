@@ -1,0 +1,37 @@
+input {
+  border: 2px solid #ccc;
+  width: 100%;
+  color: #666;
+  border-radius: 7px;
+}
+
+#amount {
+  border: 2px solid #ccc;
+  border-left: 0;
+  width: 100%;
+  color: #666;
+  border-radius: 0 7px 7px 0;
+}
+.amountContainer {
+  display: flex;
+  justify-content: flex-start;
+  margin: 8px 0;
+}
+.amountContainer input {
+  max-width: 300px;
+  flex: 1 1 300px;
+  padding: 8px;
+}
+.dollar {
+  display: flex;
+  align-items: center;
+}
+.amountContainer .dollar {
+  padding: 0 0 0 10px;
+  color: #999;
+  border: 2px solid #ccc;
+  border-right: 0;
+  line-height: 2.5;
+  border-radius: 7px 0 0 7px;
+  background: white;
+}

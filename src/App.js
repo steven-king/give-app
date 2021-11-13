@@ -35,7 +35,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <Box minHeight="100vh" bgcolor="background.default">
         <Nav tabs={ROUTES} />
-        <Box display="flex" justifyContent="center" width="100%" sx={{ mt: 6 }}>
+        <Box display="flex" justifyContent="center" width="100%" sx={{ mt: 8 }}>
           <Box width="100%" maxWidth="1400px" style={{ padding: '20px 28px' }}>
             <Routes>
               {ROUTES.map((route) => (
