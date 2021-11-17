@@ -119,7 +119,7 @@ export const GivePage = ({cause, setName}) => {
       </Box>
       <Box sx={{display: "flex", justifyContent: "center"}}>
         <Button variant="contained" href="/connect">
-          Donate Now
+          Confirm Donation
         </Button>
       </Box>
     </Box>
