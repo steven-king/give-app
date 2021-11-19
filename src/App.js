@@ -10,7 +10,7 @@ const theme = createTheme({
 
 function App() {
   const [name, setName] = useState("");
-  const [cause, setCause] = useState("X Cause");
+  const cause = "X Cause";
 
   const ROUTES = [
     {

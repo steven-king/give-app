@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {Typography, Button, Box} from "@mui/material";
 
 export const SharePage = ({cause, name}) => {
-  const [url, setUrl] = useState("rileybergamasco.com/giveapp/give");
+  const url = "rileybergamasco.com/giveapp/give";
   const [message, setMessage] = useState(
     `Hi this is ${name}! I just made a donation to help ${cause}. Can you join me by donating $1?`
   );
@@ -11,7 +11,7 @@ export const SharePage = ({cause, name}) => {
     if (navigator.share) {
       navigator
         .share({
-          title: "Donate Now",
+          title: `Donate to ${cause}`,
           url: url,
           text: message,
         })

@@ -1,5 +1,6 @@
 import {useState} from "react";
-import {Typography, Box, Link, Button} from "@mui/material";
+import {Typography, Box} from "@mui/material";
+import {CheckoutButtons} from "components";
 
 export const GivePage = ({cause, setName}) => {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -106,22 +107,13 @@ export const GivePage = ({cause, setName}) => {
           my: 2,
         }}
       >
-        <Link href="#">
-          <img src="images/paypal-logo.png" alt="PayPal logo" />
-        </Link>
-        <Link href="#">
-          <img
-            src="images/venmo-logo.png"
-            alt="Venmo logo"
-            style={{marginLeft: "10px"}}
-          />
-        </Link>
+        <CheckoutButtons amount={amount} />
       </Box>
-      <Box sx={{display: "flex", justifyContent: "center"}}>
+      {/* <Box sx={{display: "flex", justifyContent: "center"}}>
         <Button variant="contained" href="/connect">
           Confirm Donation
         </Button>
-      </Box>
+      </Box> */}
     </Box>
   );
 };

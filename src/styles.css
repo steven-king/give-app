@@ -19,20 +19,24 @@ input {
   color: #666;
   border-radius: 0 7px 7px 0;
 }
+
 .amountContainer {
   display: flex;
   justify-content: flex-start;
   margin-bottom: 8px;
 }
+
 .amountContainer input {
   max-width: 300px;
   flex: 1 1 300px;
   padding: 8px;
 }
+
 .dollar {
   display: flex;
   align-items: center;
 }
+
 .amountContainer .dollar {
   padding: 0 0 0 10px;
   color: #999;
