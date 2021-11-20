@@ -18,9 +18,7 @@ export const SharePage = ({cause, name}) => {
         <ShareButton
           cause={cause}
           message={`Hi this is ${name}! I just made a donation to help ${cause}. Can you join me by donating $1?`}
-        >
-          Share with friends
-        </ShareButton>
+        />
       </Box>
     </React.Fragment>
   );

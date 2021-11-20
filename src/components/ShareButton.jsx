@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import {Button, Box} from "@mui/material";
+import React from "react";
+import {Button} from "@mui/material";
 
 export const ShareButton = ({cause, message, children}) => {
   const url = "rileybergamasco.com/giveapp/give";
@@ -23,7 +23,7 @@ export const ShareButton = ({cause, message, children}) => {
 
   return (
     <Button variant="contained" onClick={handleClick}>
-      {children}
+      Invite friends to donate
     </Button>
   );
 };

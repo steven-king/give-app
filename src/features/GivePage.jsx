@@ -114,9 +114,7 @@ export const GivePage = ({cause, name, setName}) => {
         <ShareButton
           cause={cause}
           message={`Hi this is ${name}! Can you help me support ${cause} by donating $1?`}
-        >
-          Invite friends to donate
-        </ShareButton>
+        />
       </Box>
     </Box>
   );
