@@ -3,7 +3,6 @@ import {PayPalScriptProvider, PayPalButtons} from "@paypal/react-paypal-js";
 import PropTypes from "prop-types";
 
 export const CheckoutButtons = ({amount}) => {
-  console.log(amount);
   return (
     <PayPalScriptProvider
       options={{"client-id": "test", "disable-funding": "paylater"}}

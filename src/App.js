@@ -23,7 +23,7 @@ function App() {
     },
     {
       path: 'give',
-      element: <GivePage cause={cause} setName={setName} />,
+      element: <GivePage cause={cause} name={name} setName={setName} />,
     },
     {
       path: 'connect',

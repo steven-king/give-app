@@ -1,8 +1,8 @@
 import {useState} from "react";
 import {Typography, Box} from "@mui/material";
-import {CheckoutButtons} from "components";
+import {CheckoutButtons, ShareButton} from "components";
 
-export const GivePage = ({cause, setName}) => {
+export const GivePage = ({cause, name, setName}) => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [amount, setAmount] = useState("");
 
@@ -109,11 +109,15 @@ export const GivePage = ({cause, setName}) => {
       >
         <CheckoutButtons amount={amount === "" ? "1.00" : amount} />
       </Box>
-      {/* <Box sx={{display: "flex", justifyContent: "center"}}>
-        <Button variant="contained" href="/connect">
-          Confirm Donation
-        </Button>
-      </Box> */}
+      <Typography align="center">Can't donate today?</Typography>
+      <Box sx={{display: "flex", justifyContent: "center", m: 1}}>
+        <ShareButton
+          cause={cause}
+          message={`Hi this is ${name}! Can you help me support ${cause} by donating $1?`}
+        >
+          Invite friends to donate
+        </ShareButton>
+      </Box>
     </Box>
   );
 };

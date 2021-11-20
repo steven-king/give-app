@@ -1,29 +1,8 @@
-import React, {useState} from "react";
-import {Typography, Button, Box} from "@mui/material";
+import React from "react";
+import {Typography, Box} from "@mui/material";
+import {ShareButton} from "components";
 
 export const SharePage = ({cause, name}) => {
-  const url = "rileybergamasco.com/giveapp/give";
-  const [message, setMessage] = useState(
-    `Hi this is ${name}! I just made a donation to help ${cause}. Can you join me by donating $1?`
-  );
-
-  const handleClick = () => {
-    if (navigator.share) {
-      navigator
-        .share({
-          title: `Donate to ${cause}`,
-          url: url,
-          text: message,
-        })
-        .then(() => {
-          console.log("success");
-        })
-        .catch(console.error);
-    } else {
-      console.log("no native sharing");
-    }
-  };
-
   return (
     <React.Fragment>
       <Typography variant="h4" align="center">
@@ -36,9 +15,12 @@ export const SharePage = ({cause, name}) => {
         libero, placeat, dignissimos laudantium ad.
       </Typography>
       <Box sx={{display: "flex", justifyContent: "center", m: 2}}>
-        <Button variant="contained" onClick={handleClick}>
+        <ShareButton
+          cause={cause}
+          message={`Hi this is ${name}! I just made a donation to help ${cause}. Can you join me by donating $1?`}
+        >
           Share with friends
-        </Button>
+        </ShareButton>
       </Box>
     </React.Fragment>
   );
