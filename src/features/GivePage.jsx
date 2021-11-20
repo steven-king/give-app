@@ -107,7 +107,7 @@ export const GivePage = ({cause, setName}) => {
           my: 2,
         }}
       >
-        <CheckoutButtons amount={amount} />
+        <CheckoutButtons amount={amount === "" ? "1.00" : amount} />
       </Box>
       {/* <Box sx={{display: "flex", justifyContent: "center"}}>
         <Button variant="contained" href="/connect">
