@@ -1,7 +1,7 @@
 import React from "react";
 import {Button} from "@mui/material";
 
-export const ShareButton = ({cause, message, children}) => {
+export const ShareButton = ({cause, message}) => {
   const url = "rileybergamasco.com/giveapp/give";
 
   const handleClick = () => {
