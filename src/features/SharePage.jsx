@@ -3,7 +3,7 @@ import {ShareButton} from "components";
 
 export const SharePage = ({cause, name}) => {
   return (
-    <Box sx={{maxWidth: "1000px", margin: "auto"}}>
+    <Box sx={{maxWidth: "800px", margin: "auto"}}>
       <Typography variant="h4" align="center">
         {`Thank you for donating to ${cause}!`}
       </Typography>

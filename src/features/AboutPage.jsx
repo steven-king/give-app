@@ -2,7 +2,7 @@ import {Typography, Box} from "@mui/material";
 
 export const AboutPage = () => {
   return (
-    <Box sx={{maxWidth: "1000px", margin: "auto"}}>
+    <Box sx={{maxWidth: "800px", margin: "auto"}}>
       <Typography variant="h4" align="center">
         About
       </Typography>
