@@ -1,10 +1,9 @@
-import React from "react";
 import {Typography, Box} from "@mui/material";
 import {ShareButton} from "components";
 
 export const SharePage = ({cause, name}) => {
   return (
-    <React.Fragment>
+    <Box sx={{maxWidth: "1000px", margin: "auto"}}>
       <Typography variant="h4" align="center">
         {`Thank you for donating to ${cause}!`}
       </Typography>
@@ -20,6 +19,6 @@ export const SharePage = ({cause, name}) => {
           message={`Hi this is ${name}! I just made a donation to help ${cause}. Can you join me by donating $1?`}
         />
       </Box>
-    </React.Fragment>
+    </Box>
   );
 };

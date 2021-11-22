@@ -1,9 +1,8 @@
-import React from "react";
-import {Typography} from "@mui/material";
+import {Typography, Box} from "@mui/material";
 
 export const AboutPage = () => {
   return (
-    <React.Fragment>
+    <Box sx={{maxWidth: "1000px", margin: "auto"}}>
       <Typography variant="h4" align="center">
         About
       </Typography>
@@ -12,6 +11,6 @@ export const AboutPage = () => {
         doloribus eius sequi impedit aliquam obcaecati cumque voluptas, dolorem
         porro labore nam, et minima saepe quas, error voluptatibus dolores sint?
       </Typography>
-    </React.Fragment>
+    </Box>
   );
 };
