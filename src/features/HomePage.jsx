@@ -1,5 +1,5 @@
 import React from "react";
-import {Typography, Button, Container, Paper, Box, Grid} from "@mui/material";
+import { Typography, Button } from "@mui/material";
 import asset1 from "../asset1.png";
 import pic1 from "../headshot/1.jpg";
 import pic2 from "../headshot/2.jpg";
@@ -50,7 +50,7 @@ export const HomePage = () => {
           <Button
             href="/give"
             variant="contained"
-            style={{backgroundColor: "#f26969"}}
+            style={{ backgroundColor: "#f26969" }}
           >
             Donate
           </Button>
@@ -63,6 +63,7 @@ export const HomePage = () => {
           }}
         >
           <img
+            alt="donate icon"
             style={{
               width: "70%",
               margin: "auto",
@@ -129,8 +130,9 @@ export const HomePage = () => {
             justifyContent: "space-between",
           }}
         >
-          {picArray1.map((pic, index) => (
+          {picArray1.map((pic, i) => (
             <div
+              key={i}
               style={{
                 display: "flex",
                 flexDirection: "column",
@@ -138,7 +140,7 @@ export const HomePage = () => {
                 alignItems: "center",
               }}
             >
-              <img style={{width: "100%", borderRadius: "0"}} src={pic} />
+              <img alt="person" style={{ width: "100%", borderRadius: "0" }} src={pic} />
               <p>Test</p>
             </div>
           ))}
