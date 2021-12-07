@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 export const CheckoutButtons = ({ amount }) => {
   return (
     <PayPalScriptProvider
-      options={{ "client-id": process.env.REACT_APP_CLIENT_ID, "disable-funding": "paylater" }}
+      options={{ "client-id": process.env.REACT_APP_CLIENT_ID, "disable-funding": "paylater", "enable-funding": "venmo" }}
     >
       <PayPalButtons
         style={{ layout: "vertical" }}
